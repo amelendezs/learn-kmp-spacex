@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C \"C:\\\\Users\\\\fmele\\\\Documents\\\\dev\\\\learn-kmp-spacex\" log --oneline -10)",
+      "Bash(git -C \"C:\\\\Users\\\\fmele\\\\Documents\\\\dev\\\\learn-kmp-spacex\" show --stat 329320b)",
+      "Bash(git -C \"C:\\\\Users\\\\fmele\\\\Documents\\\\dev\\\\learn-kmp-spacex\" status)",
+      "Bash(git -C \"C:\\\\Users\\\\fmele\\\\Documents\\\\dev\\\\learn-kmp-spacex\" diff androidApp/build.gradle.kts)",
+      "Bash(git -C \"C:\\\\Users\\\\fmele\\\\Documents\\\\dev\\\\learn-kmp-spacex\" diff composeApp/build.gradle.kts)"
+    ]
+  }
+}

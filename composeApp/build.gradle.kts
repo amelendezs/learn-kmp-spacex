@@ -60,6 +60,15 @@ kotlin {
                 optIn("kotlin.time.ExperimentalTime")
             }
         }
+        commonMain.dependencies {
+            // Shared module
+            implementation(projects.shared)
+            // Koin
+            implementation(project.dependencies.platform(libs.koin.bom))
+            implementation(libs.koin.compose)
+            implementation(libs.koin.compose.viewmodel)
+            implementation(libs.koin.compose.viewmodel.navigation)
+        }
     }
 }
 

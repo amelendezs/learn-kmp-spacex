@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidMultiplatformLibrary)
     alias(libs.plugins.kotlinSerialization)
+    alias(libs.plugins.sqlDelight)
 }
 
 kotlin {
@@ -32,6 +33,8 @@ kotlin {
     sourceSets {
         androidMain.dependencies {
             implementation(libs.ktor.client.okhttp)
+            // SQLDelight
+            implementation(libs.sqldelight.driver.android)
         }
         commonMain.dependencies {
             // Coroutine
@@ -61,6 +64,13 @@ kotlin {
 
         iosMain.dependencies {
             implementation(libs.ktor.client.darwin)
+            // SQLDelight
+            implementation(libs.sqldelight.driver.native)
         }
     }
+}
+
+sqldelight {
+    databases { create("AppDatabase") { packageName.set("compose.project.demo.composedemo.data.local") } }
+    linkSqlite = true
 }

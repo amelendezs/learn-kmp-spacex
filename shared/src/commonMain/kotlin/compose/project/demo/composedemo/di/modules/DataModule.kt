@@ -6,6 +6,8 @@ import compose.project.demo.composedemo.data.local.ILocalRocketLaunchesDataSourc
 import compose.project.demo.composedemo.data.local.LocalRocketLaunchesDataSource
 import compose.project.demo.composedemo.data.remote.IRemoteRocketLaunchesDataSource
 import compose.project.demo.composedemo.data.remote.RemoteRocketLaunchesDataSource
+import compose.project.demo.composedemo.data.repository.IRocketLaunchesRepository
+import compose.project.demo.composedemo.data.repository.RocketLaunchesRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
 import org.koin.dsl.module
@@ -21,4 +23,5 @@ val dataModule = module {
     single { AppDatabase(get()) }
     single { get<AppDatabase>().appDatabaseQueries }
     single<ILocalRocketLaunchesDataSource> { LocalRocketLaunchesDataSource(get()) }
+    single<IRocketLaunchesRepository> { RocketLaunchesRepository(get(), get(), Dispatchers.Default) }
 }

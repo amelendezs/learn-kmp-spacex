@@ -52,6 +52,10 @@ kotlin {
             // Koin
             implementation(project.dependencies.platform(libs.koin.bom))
             implementation(libs.koin.core)
+            implementation(libs.koin.compose.viewmodel)
+
+            // ViewModel
+            implementation(libs.androidx.lifecycle.viewmodel)
         }
 
         commonTest.dependencies {
@@ -60,6 +64,8 @@ kotlin {
             implementation(libs.kotlinx.coroutines.test)
             // Ktor
             implementation(libs.ktor.client.mock)
+            // MockK
+            implementation(libs.mockk)
         }
 
         iosMain.dependencies {
